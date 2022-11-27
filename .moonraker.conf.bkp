@@ -1,8 +1,7 @@
 [server]
 host = 0.0.0.0
 port = 7125
-enable_debug_logging = False
-klippy_uds_address = /tmp/klippy_uds
+klippy_uds_address = /home/trident/printer_data/comms/klippy.sock
 
 [authorization]
 trusted_clients = 
@@ -20,13 +19,6 @@ cors_domains =
 	http://my.mainsail.xyz
 	https://app.fluidd.xyz
 	http://app.fluidd.xyz
-
-[database]
-database_path = /home/trident/.moonraker_database
-
-[file_manager]
-config_path = /home/trident/klipper_config
-log_path = /home/trident/klipper_logs
 
 [octoprint_compat]
 
@@ -57,7 +49,7 @@ managed_services = klipper
 type = git_repo
 path = ~/moonraker-telegram-bot
 origin = https://github.com/nlef/moonraker-telegram-bot.git
-primary_branch = merge-fans-and-heaters-to-single-config-line
+primary_branch = development
 env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
