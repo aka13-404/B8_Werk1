@@ -18,7 +18,7 @@ if [ "$#" -gt 0 ]
 then
     for each_file in resonances*.csv
     do
-        $KLIPPER_SCRIPTS_LOCATION/calibrate_shaper.py $each_file -o /$PRINTER_DATA/$OUTPUT_FOLDER/${each_file%.*}.png
+        $KLIPPER_SCRIPTS_LOCATION/calibrate_shaper.py $each_file -o /$PRINTER_DATA/$OUTPUT_FOLDER/${each_file:0:12}.png
         rm /$RESONANCE_CSV_LOCATION/$each_file
     done
 else
