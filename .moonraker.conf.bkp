@@ -1,6 +1,7 @@
 [server]
 host = 0.0.0.0
 port = 7125
+ssl_port = 7130
 klippy_uds_address = /home/trident/printer_data/comms/klippy.sock
 
 [authorization]
@@ -13,12 +14,9 @@ trusted_clients =
 	FE80::/10
 	::1/128
 cors_domains = 
-	http://*.lan
-	http://*.local
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	https://app.fluidd.xyz
-	http://app.fluidd.xyz
+	*.local
+	*.lan
+	*://localhost
 
 [octoprint_compat]
 

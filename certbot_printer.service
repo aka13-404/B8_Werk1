@@ -1,0 +1,12 @@
+[Unit]
+Description=Checks and upodates cert for printer with certbot once on startup
+After=network-online.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=trident
+ExecStart=certbot certonly --dns-cloudflare --dns-cloudflare-credentials /home/trident/printer_data/certs/certbot/cloudflare.ini --dns-cloudflare-propagation-seconds 60 --config-dir /home/trident/printer_data/certs/certbot/config-dir --work-dir /home/trident/printer_data/certs/certbot/work-dir --logs-dir /home/trident/printer_data/logs  --cert-name printer --max-log-backups 5 --non-interactive --agree-tos
+KillSignal=SIGHUP
+Restart=no
