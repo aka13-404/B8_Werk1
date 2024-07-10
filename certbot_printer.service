@@ -1,5 +1,5 @@
 [Unit]
-Description=Checks and upodates cert for printer with certbot once on startup
+Description=Checks and upodates cert for printer with certbot once on startup. Domain and email are stored in the cli.ini in the config folder.
 After=network-online.target
 
 [Install]

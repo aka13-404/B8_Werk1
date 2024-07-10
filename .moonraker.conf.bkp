@@ -5,6 +5,7 @@ ssl_port = 7130
 klippy_uds_address = /home/trident/printer_data/comms/klippy.sock
 
 [authorization]
+force_logins = False
 trusted_clients = 
 	10.0.0.0/8
 	127.0.0.0/8
@@ -54,4 +55,11 @@ primary_branch = tar-archives-support
 env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/pkglist.sh
 
